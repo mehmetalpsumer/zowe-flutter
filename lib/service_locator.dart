@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:zowe_flutter/services/services.dart';
+import 'package:zowe_flutter/view_models/view_models.dart';
 
 GetIt sl = GetIt.instance;
 
@@ -9,5 +10,6 @@ void setUpServiceLocator() {
   sl.registerLazySingleton(() => AuthService());
 
   // View models
-  // sl.registerFactory(() => DataSetViewModel());
+  sl.registerFactory(() => LoginViewModel());
+  sl.registerFactory(() => HomeViewModel());
 }
