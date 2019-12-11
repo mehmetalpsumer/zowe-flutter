@@ -11,12 +11,12 @@ class JobList {
   });
 
   factory JobList.fromJson(Map<String, dynamic> json) => JobList(
-    jobs: List<Job>.from(json["items"].map((x) => Job.fromJson(x))),
-  );
+        jobs: List<Job>.from(json["items"].map((x) => Job.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "items": List<dynamic>.from(jobs.map((x) => x.toJson())),
-  };
+        "items": List<dynamic>.from(jobs.map((x) => x.toJson())),
+      };
 }
 
 class Job {
@@ -43,26 +43,26 @@ class Job {
   });
 
   factory Job.fromJson(Map<String, dynamic> json) => Job(
-    jobId: json["jobId"],
-    jobName: json["jobName"],
-    owner: json["owner"],
-    type: json["type"],
-    status: json["status"],
-    returnCode: json["returnCode"] == null ? null : json["returnCode"],
-    subsystem: json["subsystem"],
-    executionClass: json["executionClass"],
-    phaseName: json["phaseName"],
-  );
+        jobId: json["jobId"],
+        jobName: json["jobName"],
+        owner: json["owner"],
+        type: json["type"],
+        status: json["status"],
+        returnCode: json["returnCode"] == null ? null : json["returnCode"],
+        subsystem: json["subsystem"],
+        executionClass: json["executionClass"],
+        phaseName: json["phaseName"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "jobId": jobId,
-    "jobName": jobName,
-    "owner": owner,
-    "type": type,
-    "status": status,
-    "returnCode": returnCode == null ? null : returnCode,
-    "subsystem": subsystem,
-    "executionClass": executionClass,
-    "phaseName": phaseName,
-  };
+        "jobId": jobId,
+        "jobName": jobName,
+        "owner": owner,
+        "type": type,
+        "status": status,
+        "returnCode": returnCode == null ? null : returnCode,
+        "subsystem": subsystem,
+        "executionClass": executionClass,
+        "phaseName": phaseName,
+      };
 }

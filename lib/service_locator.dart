@@ -8,8 +8,11 @@ void setUpServiceLocator() {
   // Services
   sl.registerLazySingleton(() => ApiService());
   sl.registerLazySingleton(() => AuthService());
+  sl.registerLazySingleton(() => DataSetService());
 
   // View models
   sl.registerFactory(() => LoginViewModel());
   sl.registerFactory(() => HomeViewModel());
+  sl.registerFactory(() => DataSetListViewModel());
+  sl.registerFactory(() => DataSetContentViewModel());
 }

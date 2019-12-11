@@ -45,61 +45,57 @@ class DataSet {
   });
 
   factory DataSet.fromJson(Map<String, dynamic> json) => DataSet(
-    allocatedSize: json["allocatedSize"],
-    allocationUnit: json["allocationUnit"],
-    averageBlock: json["averageBlock"],
-    blockSize: json["blockSize"],
-    catalogName: json["catalogName"],
-    creationDate: json["creationDate"],
-    dataSetOrganization: json["dataSetOrganization"],
-    deviceType: json["deviceType"],
-    directoryBlocks: json["directoryBlocks"],
-    expirationDate: json["expirationDate"],
-    migrated: json["migrated"],
-    name: json["name"],
-    primary: json["primary"],
-    recordFormat: json["recordFormat"],
-    recordLength: json["recordLength"],
-    secondary: json["secondary"],
-    used: json["used"],
-    volumeSerial: json["volumeSerial"],
-  );
+        allocatedSize: json["allocatedSize"],
+        allocationUnit: json["allocationUnit"],
+        averageBlock: json["averageBlock"],
+        blockSize: json["blockSize"],
+        catalogName: json["catalogName"],
+        creationDate: json["creationDate"],
+        dataSetOrganization: json["dataSetOrganization"],
+        deviceType: json["deviceType"],
+        directoryBlocks: json["directoryBlocks"],
+        expirationDate: json["expirationDate"],
+        migrated: json["migrated"],
+        name: json["name"],
+        primary: json["primary"],
+        recordFormat: json["recordFormat"],
+        recordLength: json["recordLength"],
+        secondary: json["secondary"],
+        used: json["used"],
+        volumeSerial: json["volumeSerial"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "allocatedSize": allocatedSize,
-    "allocationUnit": allocationUnit,
-    "averageBlock": averageBlock,
-    "blockSize": blockSize,
-    "catalogName": catalogName,
-    "creationDate": creationDate,
-    "dataSetOrganization": dataSetOrganization,
-    "deviceType": deviceType,
-    "directoryBlocks": directoryBlocks,
-    "expirationDate": expirationDate,
-    "migrated": migrated,
-    "name": name,
-    "primary": primary,
-    "recordFormat": recordFormat,
-    "recordLength": recordLength,
-    "secondary": secondary,
-    "used": used,
-    "volumeSerial": volumeSerial,
-  };
+        "allocatedSize": allocatedSize,
+        "allocationUnit": allocationUnit,
+        "averageBlock": averageBlock,
+        "blockSize": blockSize,
+        "catalogName": catalogName,
+        "creationDate": creationDate,
+        "dataSetOrganization": dataSetOrganization,
+        "deviceType": deviceType,
+        "directoryBlocks": directoryBlocks,
+        "expirationDate": expirationDate,
+        "migrated": migrated,
+        "name": name,
+        "primary": primary,
+        "recordFormat": recordFormat,
+        "recordLength": recordLength,
+        "secondary": secondary,
+        "used": used,
+        "volumeSerial": volumeSerial,
+      };
 }
 
 class DataSetList {
   final List<DataSet> dataSets;
 
-  DataSetList({
-    this.dataSets
-  });
+  DataSetList({this.dataSets});
 
   factory DataSetList.fromJson(List<dynamic> json) {
     List<DataSet> dataSets = new List<DataSet>();
-    dataSets = json.map((i)=>DataSet.fromJson(i)).toList();
+    dataSets = json.map((i) => DataSet.fromJson(i)).toList();
 
-    return new DataSetList(
-        dataSets: dataSets
-    );
+    return new DataSetList(dataSets: dataSets);
   }
 }

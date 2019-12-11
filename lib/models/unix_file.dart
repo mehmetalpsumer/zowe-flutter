@@ -23,24 +23,25 @@ class UnixFile {
   });
 
   factory UnixFile.fromJson(Map<String, dynamic> json) => UnixFile(
-    children: List<Child>.from(json["children"].map((x) => Child.fromJson(x))),
-    group: json["group"],
-    lastModified: json["lastModified"],
-    owner: json["owner"],
-    permissionsSymbolic: json["permissionsSymbolic"],
-    size: json["size"],
-    type: json["type"],
-  );
+        children:
+            List<Child>.from(json["children"].map((x) => Child.fromJson(x))),
+        group: json["group"],
+        lastModified: json["lastModified"],
+        owner: json["owner"],
+        permissionsSymbolic: json["permissionsSymbolic"],
+        size: json["size"],
+        type: json["type"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "children": List<dynamic>.from(children.map((x) => x.toJson())),
-    "group": group,
-    "lastModified": lastModified,
-    "owner": owner,
-    "permissionsSymbolic": permissionsSymbolic,
-    "size": size,
-    "type": type,
-  };
+        "children": List<dynamic>.from(children.map((x) => x.toJson())),
+        "group": group,
+        "lastModified": lastModified,
+        "owner": owner,
+        "permissionsSymbolic": permissionsSymbolic,
+        "size": size,
+        "type": type,
+      };
 }
 
 class Child {
@@ -55,14 +56,14 @@ class Child {
   });
 
   factory Child.fromJson(Map<String, dynamic> json) => Child(
-    link: json["link"],
-    name: json["name"],
-    type: json["type"],
-  );
+        link: json["link"],
+        name: json["name"],
+        type: json["type"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "link": link,
-    "name": name,
-    "type": type,
-  };
+        "link": link,
+        "name": name,
+        "type": type,
+      };
 }

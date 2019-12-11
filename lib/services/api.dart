@@ -9,6 +9,6 @@ class ApiService {
 
   static HttpClient httpClient = new HttpClient()
     ..badCertificateCallback =
-      ((X509Certificate cert, String host, int port) => true);
+        ((X509Certificate cert, String host, int port) => true);
   static IOClient ioClient = new IOClient(httpClient);
 }

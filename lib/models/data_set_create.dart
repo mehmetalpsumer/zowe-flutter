@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-DataSetCreate dataSetCreateFromJson(String str) => DataSetCreate.fromJson(json.decode(str));
+DataSetCreate dataSetCreateFromJson(String str) =>
+    DataSetCreate.fromJson(json.decode(str));
 
 String dataSetCreateToJson(DataSetCreate data) => json.encode(data.toJson());
 
@@ -34,32 +35,32 @@ class DataSetCreate {
   });
 
   factory DataSetCreate.fromJson(Map<String, dynamic> json) => DataSetCreate(
-    allocationUnit: json["allocationUnit"],
-    averageBlock: json["averageBlock"],
-    blockSize: json["blockSize"],
-    dataSetOrganization: json["dataSetOrganization"],
-    deviceType: json["deviceType"],
-    directoryBlocks: json["directoryBlocks"],
-    name: json["name"],
-    primary: json["primary"],
-    recordFormat: json["recordFormat"],
-    recordLength: json["recordLength"],
-    secondary: json["secondary"],
-    volumeSerial: json["volumeSerial"],
-  );
+        allocationUnit: json["allocationUnit"],
+        averageBlock: json["averageBlock"],
+        blockSize: json["blockSize"],
+        dataSetOrganization: json["dataSetOrganization"],
+        deviceType: json["deviceType"],
+        directoryBlocks: json["directoryBlocks"],
+        name: json["name"],
+        primary: json["primary"],
+        recordFormat: json["recordFormat"],
+        recordLength: json["recordLength"],
+        secondary: json["secondary"],
+        volumeSerial: json["volumeSerial"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "allocationUnit": allocationUnit,
-    "averageBlock": averageBlock,
-    "blockSize": blockSize,
-    "dataSetOrganization": dataSetOrganization,
-    "deviceType": deviceType,
-    "directoryBlocks": directoryBlocks,
-    "name": name,
-    "primary": primary,
-    "recordFormat": recordFormat,
-    "recordLength": recordLength,
-    "secondary": secondary,
-    "volumeSerial": volumeSerial,
-  };
+        "allocationUnit": allocationUnit,
+        "averageBlock": averageBlock,
+        "blockSize": blockSize,
+        "dataSetOrganization": dataSetOrganization,
+        "deviceType": deviceType,
+        "directoryBlocks": directoryBlocks,
+        "name": name,
+        "primary": primary,
+        "recordFormat": recordFormat,
+        "recordLength": recordLength,
+        "secondary": secondary,
+        "volumeSerial": volumeSerial,
+      };
 }

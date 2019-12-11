@@ -7,7 +7,7 @@ import 'package:zowe_flutter/services/api.dart';
 
 class AuthService {
   StreamController<User> userController = new StreamController<User>();
-  User user;
+  static User user;
 
   /// Attempts to login to Auth server.
   Future<bool> login(String username, String password) async {
@@ -35,21 +35,15 @@ class AuthService {
 
   /// POSTs credentials to Auth server.
   Future<User> _login(String username, String password) async {
-    var data = {
-      'username': username,
-      'password': password
-    };
+    var data = {'username': username, 'password': password};
 
     Map<String, String> headers = {
       'Content-Type': 'application/json',
     };
 
     // Send credentials as JSON and asnyc wait for the response.
-    var response = await ApiService.ioClient.post(
-        DevEnv.authUrl,
-        headers: headers,
-        body: jsonEncode(data)
-    );
+    var response = await ApiService.ioClient
+        .post(DevEnv.authUrl, headers: headers, body: jsonEncode(data));
 
     // Parse success field to determine if auth was succeeded.
     bool success = json.decode(response.body)['success'];

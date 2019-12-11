@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-DataSetContent dataSetContentFromJson(String str) => DataSetContent.fromJson(json.decode(str));
+DataSetContent dataSetContentFromJson(String str) =>
+    DataSetContent.fromJson(json.decode(str));
 String dataSetContentToJson(DataSetContent data) => json.encode(data.toJson());
 
 class DataSetContent {
@@ -11,10 +12,10 @@ class DataSetContent {
   });
 
   factory DataSetContent.fromJson(Map<String, dynamic> json) => DataSetContent(
-    records: json["records"],
-  );
+        records: json["records"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "records": records,
-  };
+        "records": records,
+      };
 }

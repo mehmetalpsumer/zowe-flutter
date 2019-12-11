@@ -5,22 +5,21 @@ class CustomSnackBar extends StatelessWidget {
   String text;
   Color backgroundColor;
   Color textColor;
-  int duration;//seconds
+  int duration; //seconds
   GlobalKey<ScaffoldState> scaffoldKey;
 
-  CustomSnackBar({
-    this.scaffoldKey,
-    @required this.context,
-    this.textColor:Colors.white,
-    this.backgroundColor=Colors.black12,
-    @required this.text,
-    this.duration=3
-  });
+  CustomSnackBar(
+      {this.scaffoldKey,
+      @required this.context,
+      this.textColor: Colors.white,
+      this.backgroundColor = Colors.black12,
+      @required this.text,
+      this.duration = 3});
 
-  void showSnackBar(){
-    scaffoldKey==null ?
-    Scaffold.of(context).showSnackBar(customSnackBar()) :
-    scaffoldKey.currentState.showSnackBar(customSnackBar());
+  void showSnackBar() {
+    scaffoldKey == null
+        ? Scaffold.of(context).showSnackBar(customSnackBar())
+        : scaffoldKey.currentState.showSnackBar(customSnackBar());
   }
 
   @override
@@ -28,7 +27,7 @@ class CustomSnackBar extends StatelessWidget {
     return customSnackBar();
   }
 
-  Widget customSnackBar(){
+  Widget customSnackBar() {
     return SnackBar(
       content: Text(
         text,

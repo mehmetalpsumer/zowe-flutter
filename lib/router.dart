@@ -13,13 +13,19 @@ class Router {
         return MaterialPageRoute(builder: (_) => LoginView());
       case '/':
         return MaterialPageRoute(builder: (_) => HomeView());
+      case 'dataSetList':
+        return MaterialPageRoute(builder: (_) => DataSetListView());
+      case 'dataSetContent':
+        var dataSet = settings.arguments as DataSet;
+        return MaterialPageRoute(
+            builder: (_) => DataSetContentView(dataSet: dataSet));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
-              body: Center(
-                child: Text('404 ${settings.name} route not found.'),
-              ),
-            ));
+                  body: Center(
+                    child: Text('404 ${settings.name} route not found.'),
+                  ),
+                ));
     }
   }
 }

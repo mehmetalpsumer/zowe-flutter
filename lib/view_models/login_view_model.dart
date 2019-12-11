@@ -10,11 +10,7 @@ class LoginViewModel extends BaseViewModel {
 
   Future<bool> login(String username, String password) async {
     setState(ViewState.Busy);
-
     var success = await _authenticationService.login(username, password);
-
-    // Handle potential error here too.
-
     setState(ViewState.Idle);
     return success;
   }
