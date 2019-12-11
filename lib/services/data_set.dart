@@ -13,15 +13,9 @@ class DataSetService {
       'Authorization': 'Basic ' + AuthService.user.token,
     };
 
-    final url = ApiService.API_ENDPOINT + '/api/v1/datasets/' + filterString;
+    final url = '${ApiService.DATA_SET_ENDPOINT}/$filterString';
     var response = await ApiService.ioClient.get(url, headers: headers);
-    print(response.toString());
-    print('Url: $url');
-    print('Status: ${response.statusCode}');
-    print('Body: ${response.body}');
-
     var jsonBody = json.decode(response.body);
-    print('Json Body: $jsonBody');
     return DataSetList.fromJson(jsonBody['items']);
   }
 
@@ -32,10 +26,7 @@ class DataSetService {
       'Authorization': 'Basic ' + AuthService.user.token,
     };
 
-    final url = ApiService.API_ENDPOINT +
-        '/api/v1/datasets/' +
-        dataSetName +
-        '/content';
+    final url = '${ApiService.DATA_SET_ENDPOINT }/$dataSetName/content';
     var response = await ApiService.ioClient.get(url, headers: headers);
     var jsonBody = json.decode(response.body);
     return DataSetContent.fromJson(jsonBody);
@@ -51,10 +42,7 @@ class DataSetService {
     var data = {'records': content};
     var dataJson = json.encode(data);
 
-    final url = ApiService.API_ENDPOINT +
-        '/api/v1/datasets/' +
-        dataSetName +
-        '/content';
+    final url = '${ApiService.DATA_SET_ENDPOINT}/$dataSetName/content';
     var response =
         await ApiService.ioClient.put(url, headers: headers, body: dataJson);
 

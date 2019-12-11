@@ -4,6 +4,7 @@ import 'package:zowe_flutter/enums/view_state.dart';
 import 'package:zowe_flutter/models/data_set.dart';
 import 'package:zowe_flutter/view_models/view_models.dart';
 import 'package:zowe_flutter/views/shared/app_colors.dart';
+import 'package:zowe_flutter/views/shared/text_styles.dart';
 import 'package:zowe_flutter/views/shared/ui_helpers.dart';
 import 'package:zowe_flutter/views/base_view.dart';
 import 'package:zowe_flutter/widgets/snack_bar.dart';
@@ -72,7 +73,8 @@ class _DataSetContentViewState extends State<DataSetContentView> {
                         )
                       ],
                     ),
-                    Text('Contents of ${dataSet.name}'),
+                    UIHelper.verticalSpaceSmall(),
+                    Padding(padding: EdgeInsets.all(10.0), child: Text('Contents of ${dataSet.name}', style: subHeaderStyle),),
                     Container(
                         padding: EdgeInsets.all(10.0),
                         height: 200.0,

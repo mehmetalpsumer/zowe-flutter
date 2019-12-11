@@ -43,6 +43,7 @@ class _LoginViewState extends State<LoginView> {
 
     return BaseView<LoginViewModel>(
       builder: (context, model, child) => Scaffold(
+          resizeToAvoidBottomPadding: false,
           backgroundColor: backgroundColor,
           body: Builder(
             builder: (BuildContext context) {

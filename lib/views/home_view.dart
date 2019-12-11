@@ -47,7 +47,7 @@ class _HomeViewState extends State<HomeView> {
                                 width: 150.0,
                                 height: 150.0,
                                 padding: new EdgeInsets.fromLTRB(
-                                    20.0, 40.0, 20.0, 40.0),
+                                    10.0, 20.0, 10.0, 20.0),
                                 margin: new EdgeInsets.all(5.0),
                                 decoration: BoxDecoration(
                                     color: Colors.lightBlueAccent.shade100,
@@ -63,15 +63,17 @@ class _HomeViewState extends State<HomeView> {
                                       child: Image.asset(
                                     "assets/data_set.png",
                                     width: 75.0,
-                                    height: 75.0,
+                                    height: 100.0,
                                     alignment: Alignment.center,
                                   )),
                                   Center(
+                                      child: Container(
+                                    height: 30.0,
                                     child: Text(
                                       "Data Sets",
-                                      style: headerStyle,
+                                      style: subHeaderStyle,
                                     ),
-                                  )
+                                  ))
                                 ]),
                               )),
                           // Jobs
@@ -84,7 +86,7 @@ class _HomeViewState extends State<HomeView> {
                                 width: 150.0,
                                 height: 150.0,
                                 padding: new EdgeInsets.fromLTRB(
-                                    20.0, 40.0, 20.0, 40.0),
+                                    10.0, 20.0, 10.0, 20.0),
                                 margin: new EdgeInsets.all(5.0),
                                 decoration: BoxDecoration(
                                     color: Colors.lightBlueAccent.shade100,
@@ -98,18 +100,17 @@ class _HomeViewState extends State<HomeView> {
                                 child: new Column(children: [
                                   Icon(
                                     Icons.assignment,
-                                    size: 75.0,
+                                    size: 100.0,
                                   ),
-                                  /*Image.asset(
-                                  "assets/job.png",
-                                  width: 75.0,
-                                  height: 75.0,
-                                  alignment: Alignment.center,
-                                ),*/
-                                  new Text(
-                                    "Jobs",
-                                    style: headerStyle,
-                                  ),
+                                  Center(
+                                    child: Container(
+                                      height: 30.0,
+                                      child: Text(
+                                        "Jobs",
+                                        style: subHeaderStyle,
+                                      ),
+                                    )
+                                  )
                                 ]),
                               )),
                           // Logout
@@ -131,7 +132,7 @@ class _HomeViewState extends State<HomeView> {
                                 width: 150.0,
                                 height: 150.0,
                                 padding: new EdgeInsets.fromLTRB(
-                                    20.0, 40.0, 20.0, 40.0),
+                                    10.0, 20.0, 10.0, 20.0),
                                 margin: new EdgeInsets.all(5.0),
                                 decoration: BoxDecoration(
                                     color: Colors.deepOrange.shade100,
@@ -145,18 +146,17 @@ class _HomeViewState extends State<HomeView> {
                                 child: new Column(children: [
                                   Icon(
                                     Icons.exit_to_app,
-                                    size: 75.0,
+                                    size: 100.0,
                                   ),
-                                  /*Image.asset(
-                                  "assets/job.png",
-                                  width: 75.0,
-                                  height: 75.0,
-                                  alignment: Alignment.center,
-                                ),*/
-                                  new Text(
-                                    "Logout",
-                                    style: headerStyle,
-                                  ),
+                                  Center(
+                                    child: Container(
+                                      height: 30.0,
+                                      child: Text(
+                                        "Logout",
+                                        style: subHeaderStyle,
+                                      ),
+                                    )
+                                   )
                                 ]),
                               )),
                         ]),

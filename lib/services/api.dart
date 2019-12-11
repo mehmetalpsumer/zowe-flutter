@@ -5,7 +5,7 @@ import 'package:zowe_flutter/env.dart';
 
 class ApiService {
   static const AUTH_ENDPOINT = DevEnv.authUrl;
-  static const API_ENDPOINT = DevEnv.apiUrl;
+  static const DATA_SET_ENDPOINT = DevEnv.dataSetUrl;
 
   static HttpClient httpClient = new HttpClient()
     ..badCertificateCallback =
