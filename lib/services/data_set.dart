@@ -6,7 +6,7 @@ import 'package:zowe_flutter/models/data_set_content.dart';
 import 'package:zowe_flutter/services/services.dart';
 
 class DataSetService {
-  /// GET request to datasets with filter parameter.
+  /// Get list of data sets with filter.
   Future<DataSetList> filterDataSets(String filterString) async {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
@@ -19,7 +19,7 @@ class DataSetService {
     return DataSetList.fromJson(jsonBody['items']);
   }
 
-  /// GET request to datasets/content with data set name.
+  /// Get data set content.
   Future<DataSetContent> getDataSetContent(String dataSetName) async {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ class DataSetService {
     return DataSetContent.fromJson(jsonBody);
   }
 
-  /// PUT request to update content of a data set
+  /// Update contents of data set.
   Future<bool> updateDataSetContent(String dataSetName, String content) async {
     Map<String, String> headers = {
       'Content-Type': 'application/json',
